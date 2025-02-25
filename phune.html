@@ -1,0 +1,379 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+            max-height: 100vh;
+            background-color: rgba(53, 124, 185, 0.884);
+        }
+        .phone{
+            transform-style: preserve-3d;
+            background-color: rgb(21, 6, 94);
+            transform: rotatey(0deg);
+            width: 332px;
+            height: 600px;
+            border: 18px solid black;
+            border-radius: 40px;
+            box-shadow: 4px 5px 5px blue;
+            
+            animation: rotate 20s linear infinite alternate;
+        }
+
+        .phone::before{
+            position: absolute;
+            transform: translateX(100px);
+            content: "";
+            color: white;
+            width: 100px;
+            height: 20px;
+            background-color: black;
+            border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+            z-index: 222;
+        }
+        .phone::after{
+            position: absolute;
+            content: "";
+            background-color: rgba(39, 55, 80, 0.64);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 5px solid rgba(22, 43, 233, 0.589);
+            transform: translateY(510px) translateX(125px);
+            cursor: pointer;
+        }
+        .butto{
+            position: absolute;
+            background-color: black;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            height: 50px;
+            width: 10px;
+            transform: translateX(-22px) translateY(110px);
+        }
+        .butto::after{
+            position: absolute;
+            border-radius: inherit;
+            content: "";
+            width: 10px;
+            height: 50px;
+            background-color: black;
+            transform: translateY(50px);
+        }
+        .butto::before{
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: inherit;
+            background-color: black;
+            border-radius: inherit;
+            transform: translateY(-40px);
+            
+        }
+        .power{
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            background-color: black;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            height: 70px;
+            width: 10px;
+            transform: translateX(313px) translateY(110px);
+        }
+       .buttom{
+        width: 300px;
+        background-color: black;
+        height: 80px;
+        position: absolute;
+        transform: translateY(490px);
+        border-bottom-right-radius: 35px;
+        border-bottom-left-radius: 20pxpx;
+       }
+       .glasscon{
+       
+        cursor: pointer;
+        opacity: 0.5;
+        filter: drop-shadow(0px 0px 50px rgba(222, 215, 215, 0.625));
+        position: absolute;
+        width: 150px;
+        border-radius: 50%;
+        border: 8px solid rgba(95, 82, 143, 0.521);
+        height: 150px;
+        background-color: rgba(194, 205, 215, 0.341);
+        
+        left: 70px;
+        top: 280px;
+        animation: glass 4s linear infinite alternate;
+       } 
+       @keyframes glass {
+          from{
+            
+            transform: translateX(-20px) scale(0.9);
+          }
+          to{
+            transform: rotateZ(30deg)scale(0.9) translatex(20px);
+          }
+       }
+       .glasscon:hover{
+        animation-play-state: paused;
+       }
+       .glasscon::before{
+        z-index: 1;
+       position: absolute;
+       content: "";
+       width: 50px;
+       height: 10px;
+       border-radius: 50%;
+       transform: translateX(40px) translateY(-9px);
+       background-color: transparent;
+       border: 5px solid rgba(164, 162, 173, 0.633);
+       }
+       .glasscon::after{
+        position: absolute;
+        
+        content: "";
+        width: 90px;
+        border-radius: 50%;
+        transform: translateX(25px) translateY(60px);
+        height: 30px;
+        background-color: rgba(55, 86, 160, 0.118);
+       }
+       .flui{
+        position: absolute;
+        bottom: 4;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 500px;
+        border-bottom-left-radius: 500px;
+        width: 140px;
+        height: 70px;
+    
+        animation: hu 4s linear infinite alternate;
+        background-color: pink;
+        
+        
+       }
+       .flui::before{
+        position: absolute;
+        content: "";
+        transform: translateY(-10px);
+        width: 100%;
+        height: 30px;
+        background-color:   rgba(51, 65, 70, 0.097);
+        border-radius: 50%;
+       }
+       @keyframes hu {
+        0%{
+            filter: hue-rotate(0deg);
+            
+        }
+        
+        100%{
+            filter: hue-rotate(360deg);
+            transform: rotatez(-30deg)translatex(10px);
+            
+        }
+       }
+       h1{
+        position: absolute;
+        color: aliceblue;
+        left: 80px;
+       }
+       .shadow{
+        position: absolute;
+        bottom: 130px;
+        z-index: -999;
+        left: 50px;
+        opacity: 0.5;
+        border-radius: 50%;
+        height: 40px;
+        width: 200px;
+        background-color: rgb(4, 10, 15);
+        filter: drop-shadow(0px 0px 9px black);
+        animation: shad 4s linear infinite alternate;
+       }
+       @keyframes shad {
+          from{
+            transform: translateX(10px);
+          }
+          to{
+            transform: translateX(25px) scale(0.5);
+          }
+       }
+       .leaf{
+        transform: translateX(70px) rotatez(40deg);
+        width: 15px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: aliceblue;
+       }
+       .apple{
+        opacity: 0;
+        transform: scale(0.5);
+        position: absolute;
+        transition: 1s ease;
+        top: 180px;
+        left: 100px;
+        animation: 3s fade linear infinite;
+       }
+       @keyframes fade {
+          0%{ opacity: 0;
+        }
+          100%{opacity: 1;
+             transform: scale(0.6);
+        }
+       }
+       .appl{
+        width: 90px;
+        height: 120px;
+        background-color: aliceblue;
+        border-radius: 50%;
+       }
+       .two{
+        transform: translateX(40px) translateY(-120px);
+       }
+       #crcle{
+        position: absolute;
+        width: 50px;
+        height: 70px;
+        background-color:  black;
+        border-radius: 50%;
+        left: 100px;
+        top: 60px;
+       }
+       #loader{
+        position: absolute;
+        background-color: black;
+        border-radius: 20px 20px 0 0;
+        width: 300px;
+        height: 500px;
+        z-index: 2;
+       }
+       i{
+        position: absolute;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        z-index: -4;
+        
+        
+       }
+       .bi-battery-half{
+        left: 270px;
+       }
+       .bi-wifi{
+        left: 250px;
+       }
+       .bi-reception-3{
+        left: 230px;
+       }
+       .bi-unlock-fill{
+        left: 135px;
+        font-size: 30px;
+        top: 40px;
+       }
+       .bi-camera-fill{
+        bottom: 100px;
+        right: 40px;
+        font-size: 25px;
+       }
+       .bi-lightbulb-fill{
+        bottom: 100px;
+        left: 40px;
+        font-size: 25px;
+       }
+       .bi-dash-lg{
+        bottom: 110px;
+        left: 100px;
+        font-size: 100px;
+       }
+       .date{
+        position: absolute;
+        top: 70px;
+        left: 25px;
+        height: 100px;
+        width: 70%;
+        display: grid;
+        place-items: center;
+       }
+       .dat{
+        transform: translateY(40px) translateX(15px);
+       }
+       h1{
+        font-size: 40px;
+        transform: translateX(-20px);
+       }
+    </style>
+</head>
+<body>
+  
+  
+    <div class="phone" id="phone">
+      <i class="bi bi-wifi"></i>
+      <i class="bi bi-reception-3"></i>
+      <i class="bi bi-unlock-fill"></i>
+      <i class="bi bi-camera-fill"></i>
+      <i class="bi bi-dash-lg"></i>
+      <i class="bi bi-lightbulb-fill"></i>
+      <i class="bi bi-battery-half bat"></i>
+      <div class="butto"></div>
+      <button class="power" onclick="change()"></button>
+      
+    
+    
+      <div class="glasscon">
+        <div class="flui"></div>
+      </div>
+       <div class="shadow"></div>
+
+    <div id="loader">
+       <div class="apple">
+        <div class="leaf"></div>
+        <div class="appl one"></div>
+        <div class="appl two"></div>
+        <div id="crcle"></div>
+
+       </div>
+    </div>
+    
+
+    <div class="date">
+      <h1>22 : 08</h1>
+      <p class="dat">Saturday, February 22</p>
+    </div>
+
+
+      <div class="buttom"></div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+       function change() {
+        var body = document.getElementById("phone");
+        var cir = document.getElementById("crcle");
+        var load = document.getElementById("loader");
+
+        var rand = "#"+Math.floor(Math.random()*23456774).toString(16);
+        body.style.backgroundColor = rand;
+        cir.style.backgroundColor = rand;
+        load.style.backgroundColor =rand;
+       }
+       setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+       }, 5000);
+    </script>
+</body>
+</html>
